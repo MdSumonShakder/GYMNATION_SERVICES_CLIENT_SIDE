@@ -1,17 +1,34 @@
-import React from 'react';
+import { useHistory, useLocation } from "react-router";
+import useAuth from "../../../Hooks/useAuth";
+import Footer from "../../Home/Footer/Footer";
+
+import "./Login.css";
 
 const Login = () => {
+  const { singInGoogle } = useAuth();
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_ui = location.state?.from || "/";
+  const googleLogIn = () => {
+    singInGoogle().then((result) => {
+      history.push(redirect_ui);
+    });
+  };
+
   return (
     <div>
-    <h2>Login</h2>
-      <from>
-     
+      <div className="login">
+        <h1 className=" text-primary">Login</h1>
         <input type="text" placeholder="Enter Your Email" /> <br />
         <input type="password" placeholder="Enter Your Password" /> <br />
-        <input type="submit" value="Submit" />
-      </from>
-      <div>---------or----------</div>
-      <button>Google Sing In</button>
+        <input type="submit" value="Register" />
+        <br />
+        <div>---------or----------</div> <br />
+        <button onClick={googleLogIn} className="btn btn-danger">
+          Google Sing In
+        </button>
+      </div>
+      <Footer></Footer>
     </div>
   );
 };

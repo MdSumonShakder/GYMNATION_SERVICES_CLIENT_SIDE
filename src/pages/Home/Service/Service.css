@@ -1,0 +1,18 @@
+.service{
+  border: 2px solid rgb(89, 0, 255);
+  padding: 20px 20px;
+  margin: 20px 10px;
+  box-shadow:  0 0 8px 3px rgb(0, 0, 0);
+
+}
+
+.service p{
+text-align: center;
+font-family: cursive;
+font-weight: 600;
+color: rgb(0, 163, 82);
+}
+.service img{
+  box-shadow: 0 0 5px 3px rgb(255, 0, 0);
+  border-radius: 25px;
+}
