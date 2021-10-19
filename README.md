@@ -1,6 +1,6 @@
 # This is my React Gym-Studio project Link: https://healthcare-related-websi-29368.web.app/
 
-This project was bootstrapped with [Create React App](https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-SumonShakder.git).
+This is my GitHub Link: [Create React App](https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-SumonShakder.git).
 
 
 * I wanted to show through my project how physical fitness is when you exercise....
