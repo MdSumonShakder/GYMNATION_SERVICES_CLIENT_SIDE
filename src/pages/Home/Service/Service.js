@@ -1,10 +1,12 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import './Service.css';
 
 
 const Service = ({ service }) => {
   const { id, name, img, description } = service;
+
+
   return (
     <div className=" col-lg-4 col-md-6 col-12">
          <div className="service">

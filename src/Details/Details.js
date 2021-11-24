@@ -1,40 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router';
-import Detail from '../Detail/Detail';
+
+
 
 
 const Details = () => {
-  const {id}=useParams();
-  const [details,setDetails]=useState([]);
-  
-  useEffect(()=>{
-    fetch('./services.JSON')
-      .then(res => res.json())
-      .then(data => setDetails(data));
-  },[]);
-
-
+ const [service,setService]=useState([]);
+  const { detailsId } = useParams();
+useEffect(()=>{
+  fetch(`http://localhost:3001/details/${detailsId}`)
+  .then(res=>res.json())
+  .then(data=>setService(data));
+},[]);
 
   return (
     <div>
-     <div className="container mb-5 mt-5">
-      <div className="container">
-        <div className="row">
-          <h1 className="gum mb-5 fw-bolder">Services Details</h1>
-          {
-            details?.find(detail => <Detail
 
-              key={detail.id}
-              detail={detail}
+      <h1 className="gum mt-5 mb-5 fw-bolder">Services Details {detailsId}</h1>
+      <h3>{service.name}</h3>
+      <img src={service.img} alt="" />
 
-            ></Detail>)
-          }
-
-        </div>
-
-      </div>
-    </div>
-     
     </div>
   );
 };
